@@ -423,7 +423,7 @@
     <h2 style="max-width:20ch">Que el ciudadano consiga su cita en EsSalud. Solo.</h2>
     <div class="impact">
       <div>
-        <p class="lead" style="margin-top:0">Un asistente con IA que revisa la disponibilidad real de citas médicas en EsSalud y guía a la persona a reservar por sí misma — sin tramitadores, sin colas eternas, desde su celular.</p>
+        <p class="lead" style="margin-top:0">Un asistente ciudadano <b>no oficial</b> (sin vínculo con EsSalud) que consulta el <b>portal público</b> de citas y guía a la persona a reservar por sí misma — sin tramitadores, sin colas eternas, desde su celular.</p>
         <ul class="emp">
           <li>Gratuito y en lenguaje simple, para cualquier nivel digital.</li>
           <li>Le devuelve al ciudadano el control sobre su salud.</li>
@@ -595,7 +595,7 @@ descargas contra el reCAPTCHA de la plataforma origen.</script>
     <div class="eyebrow">Sin quebrar el presupuesto</div>
     <h2>La barrera no es el dinero. Es el diseño.</h2>
     <div class="cards c3">
-      <div class="card"><div class="knum teal">Gratis</div><div class="klabel">Hosting estático (GitHub Pages / Cloudflare). Cero servidor que mantener.</div></div>
+      <div class="card"><div class="knum teal">US$0</div><div class="klabel">El tablero es estático (GitHub Pages). El chatbot corre en un VPS <b>compartido ya existente</b>: costo marginal, no un servidor nuevo.</div></div>
       <div class="card"><div class="knum accent">Centavos</div><div class="klabel">IA solo en el build y en consultas acotadas, con topes de uso por IP.</div></div>
       <div class="card"><div class="knum">Candados</div><div class="klabel">Rate-limit, tope diario, modelo barato con fallback. El costo nunca se dispara.</div></div>
     </div>
@@ -612,7 +612,7 @@ descargas contra el reCAPTCHA de la plataforma origen.</script>
   <!-- 13 -->
   <section class="slide">
     <div class="eyebrow">El llamado a la acción · ENGD 2026-2030</div>
-    <h2 style="max-width:24ch">Lo que hoy hice con una entidad, hágamoslo con 2,000.</h2>
+    <h2 style="max-width:24ch">Lo que hoy hice con una entidad, hagámoslo con 2,000.</h2>
     <ul class="clean">
       <li><b>Interoperable por defecto</b> <span>— registro de visitas descargable en formato reutilizable, no bajo pedido.</span></li>
       <li><b>Calidad del dato</b> <span>— motivos y campos estandarizados, no “Otros Motivos” en 3 de cada 4 registros.</span></li>
@@ -645,7 +645,7 @@ descargas contra el reCAPTCHA de la plataforma origen.</script>
   <!-- 7 -->
   <section class="slide">
     <div class="eyebrow">Los datos hablan · serie mensual</div>
-    <h2 style="max-width:26ch">Las visitas caen a la mitad en 17 meses. ¿Menos gestión, o menos registro?</h2>
+    <h2 style="max-width:26ch">Las visitas registradas caen a la mitad en 17 meses. ¿Menos actividad o menos registro? El dato abierto aún no alcanza para saberlo.</h2>
     <div class="chart">
       <div class="bars" id="mbars"></div>
       <div class="xlab" id="mx"></div>
@@ -714,7 +714,7 @@ descargas contra el reCAPTCHA de la plataforma origen.</script>
 <div class="nav"><button id="prev" aria-label="Anterior">‹</button><button id="next" aria-label="Siguiente">›</button></div>
 <div class="dots" id="dots"></div>
 <div class="counter"><b id="cur">1</b> / <span id="tot">14</span></div>
-<div class="hint">← → para navegar · F pantalla completa</div>
+<div class="hint">← → o desliza para navegar · F pantalla completa</div>
 
 <script>
   var slides=[].slice.call(document.querySelectorAll('.slide'));
@@ -736,6 +736,13 @@ descargas contra el reCAPTCHA de la plataforma origen.</script>
   }
   document.getElementById('next').onclick=function(){go(i+1)};
   document.getElementById('prev').onclick=function(){go(i-1)};
+  // navegación por swipe (móvil / WhatsApp)
+  var tsx=0,tsy=0;
+  document.addEventListener('touchstart',function(e){var t=e.changedTouches[0];tsx=t.clientX;tsy=t.clientY;},{passive:true});
+  document.addEventListener('touchend',function(e){
+    var t=e.changedTouches[0],dx=t.clientX-tsx,dy=t.clientY-tsy;
+    if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){ go(dx<0?i+1:i-1); }
+  },{passive:true});
   document.addEventListener('keydown',function(e){
     if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' ')go(i+1);
     else if(e.key==='ArrowLeft'||e.key==='PageUp')go(i-1);
