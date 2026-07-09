@@ -228,6 +228,18 @@
   @keyframes pop{from{opacity:0;transform:translateY(14px) scale(.95)}to{opacity:1;transform:none}}
   @media (prefers-reduced-motion:reduce){.slide.on .anim{animation:none}}
 
+  /* franja de traction / usuarios */
+  .traction{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(8px,1.1vw,13px);
+    margin-top:clamp(16px,2.6vh,28px)}
+  .traction .tbig{font-size:clamp(14px,1.5vw,19px);font-weight:800;color:var(--teal);
+    background:rgba(51,194,175,.12);border:1px solid rgba(51,194,175,.42);border-radius:22px;
+    padding:9px 16px}
+  .tapp{font-size:clamp(12px,1.25vw,16px);color:var(--fg);background:var(--card);
+    border:1px solid var(--hair);border-radius:22px;padding:9px 14px;font-variant-numeric:tabular-nums;
+    font-weight:600}
+  .tapp b{color:var(--amber);font-weight:800;margin-left:5px}
+  .tmore{font-size:clamp(11px,1.15vw,14px);color:var(--amber);font-weight:600;font-style:italic}
+
   /* callout destacado arriba-derecha */
   .callout-tr{position:absolute;top:clamp(22px,6vh,68px);right:clamp(22px,4.5vw,72px);
     max-width:clamp(250px,32vw,400px);
@@ -278,6 +290,14 @@
       <div class="card"><div class="knum teal">4</div><div class="klabel">SaaS con IA en producción — <b>2 ya monetizando</b> (etapa inicial), otros en camino. Agentes, guardrails y pagos reales.</div></div>
       <div class="card"><div class="knum accent">+20</div><div class="klabel">Dashboards cívicos de datos abiertos <b>en un mes</b>: justicia, finanzas, seguridad, educación, universidades, ambiente y presupuesto.</div></div>
       <div class="card"><div class="knum">~US$</div><div class="klabel">Costo de IA de esos servicios: <b>centavos al mes</b>, no miles. Ese es el punto de hoy.</div></div>
+    </div>
+    <div class="traction">
+      <span class="tbig">~<b>1,000</b> usuarios reales</span>
+      <span class="tapp">MEGOL <b>500</b></span>
+      <span class="tapp">DoorHQ <b>400</b></span>
+      <span class="tapp">Liti <b>50</b></span>
+      <span class="tapp">GoPues <b>50</b></span>
+      <span class="tmore">+ nuevos releases esta semana</span>
     </div>
     <p class="lead">Seré honesto: mi producción nace del sector privado y de tableros ciudadanos. Pero las lecciones —costo, guardrails, gobierno del dato— son <b class="accent">directamente transferibles al Estado</b>.</p>
   </section>
