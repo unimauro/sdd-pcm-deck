@@ -228,6 +228,25 @@
   @keyframes pop{from{opacity:0;transform:translateY(14px) scale(.95)}to{opacity:1;transform:none}}
   @media (prefers-reduced-motion:reduce){.slide.on .anim{animation:none}}
 
+  /* diapo de impacto / video essalud */
+  .impact{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(18px,3vw,46px);
+    align-items:center;margin-top:clamp(12px,2.2vh,24px)}
+  .emp{list-style:none;padding:0;margin:clamp(14px,2.2vh,22px) 0 0;display:flex;
+    flex-direction:column;gap:clamp(9px,1.4vh,15px)}
+  .emp li{padding-left:28px;position:relative;font-size:clamp(14px,1.4vw,19px);
+    line-height:1.35;color:var(--fg)}
+  .emp li::before{content:"✓";position:absolute;left:0;top:0;color:var(--teal);font-weight:800;font-size:1.05em}
+  .vidcard{background:var(--card);border:1px solid var(--hair);border-radius:16px;overflow:hidden;
+    box-shadow:0 26px 64px -34px rgba(0,0,0,.6)}
+  .vidcard video{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;background:#0a1420}
+  .vidfoot{display:flex;align-items:center;gap:clamp(12px,1.6vw,18px);padding:clamp(12px,1.5vw,18px)}
+  .qr{width:clamp(72px,9vw,102px);height:clamp(72px,9vw,102px);flex:0 0 auto;background:#fff;
+    border-radius:10px;padding:6px;line-height:0}
+  .vf-t{font-size:clamp(12px,1.2vw,15px);color:var(--mut);line-height:1.4}
+  .vf-t b{color:var(--fg);font-weight:700;display:block;margin-bottom:3px;font-size:1.05em}
+  .vf-t .url{font-family:var(--mono);color:var(--teal);font-size:.92em}
+  @media (max-width:880px){.impact{grid-template-columns:1fr}}
+
   /* franja de traction / usuarios */
   .traction{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(8px,1.1vw,13px);
     margin-top:clamp(16px,2.6vh,28px)}
@@ -351,6 +370,30 @@
         <div class="shot" style="--sh1:#a16207;--sh2:#713f12"><span class="ic">🎓</span><h3>Ranking CIP</h3>
         <p>Ranking de universidades del Perú</p>
         <div class="bars"><i style="height:100%"></i><i style="height:80%"></i><i style="height:65%"></i><i style="height:55%"></i><i style="height:45%"></i><i style="height:40%"></i></div></div></div>
+    </div>
+  </section>
+
+  <!-- ESSALUD · empoderamiento ciudadano -->
+  <section class="slide">
+    <div class="eyebrow">Impacto · IA para el empoderamiento ciudadano</div>
+    <h2 style="max-width:20ch">Que el ciudadano consiga su cita en EsSalud. Solo.</h2>
+    <div class="impact">
+      <div>
+        <p class="lead" style="margin-top:0">Un asistente con IA que revisa la disponibilidad real de citas médicas en EsSalud y guía a la persona a reservar por sí misma — sin tramitadores, sin colas eternas, desde su celular.</p>
+        <ul class="emp">
+          <li>Gratuito y en lenguaje simple, para cualquier nivel digital.</li>
+          <li>Le devuelve al ciudadano el control sobre su salud.</li>
+          <li>Construido con la misma metodología: spec, agentes y bajo costo.</li>
+        </ul>
+      </div>
+      <div class="vidcard">
+        <div class="chrome"><i></i><i></i><i></i><span class="u">essalud.tunky.net/tutorial</span></div>
+        <video src="demo-essalud.mp4" autoplay muted loop playsinline controls></video>
+        <div class="vidfoot">
+          <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" width="100%" height="100%" class="segno"><path fill="#fff" d="M0 0h33v33h-33z"/><path class="qrline" stroke="#0d1a2b" d="M2 2.5h7m2 0h1m1 0h5m2 0h1m3 0h7m-29 1h1m5 0h1m1 0h1m1 0h2m3 0h1m1 0h1m4 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h2m2 0h1m1 0h1m1 0h3m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h4m2 0h4m1 0h2m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h1m1 0h1m1 0h3m2 0h2m2 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m3 0h1m1 0h3m5 0h1m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h6m-14 1h1m5 0h1m1 0h5m1 0h2m1 0h1m1 0h4m2 0h3m-28 1h5m3 0h2m1 0h1m2 0h1m1 0h1m2 0h1m3 0h2m1 0h2m-26 1h2m2 0h1m1 0h1m6 0h1m4 0h1m1 0h3m-20 1h1m1 0h1m6 0h1m1 0h1m1 0h2m4 0h2m-26 1h2m2 0h1m1 0h1m1 0h1m2 0h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h2m4 0h1m-29 1h2m1 0h3m1 0h1m1 0h3m1 0h12m2 0h2m-29 1h2m1 0h1m2 0h4m2 0h6m5 0h1m1 0h2m-26 1h2m1 0h2m1 0h2m1 0h2m1 0h2m1 0h1m2 0h1m1 0h2m1 0h1m1 0h1m1 0h1m-29 1h3m2 0h2m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m3 0h1m1 0h2m-27 1h1m2 0h3m2 0h2m2 0h1m2 0h2m2 0h2m1 0h3m1 0h3m-29 1h2m1 0h2m1 0h1m6 0h3m1 0h1m1 0h1m2 0h1m2 0h1m2 0h1m-29 1h1m1 0h2m1 0h1m4 0h1m3 0h1m3 0h1m1 0h1m3 0h1m-25 1h1m1 0h1m1 0h5m8 0h1m2 0h5m1 0h3m-21 1h1m1 0h2m1 0h1m1 0h1m3 0h2m3 0h2m-26 1h7m3 0h6m3 0h2m1 0h1m1 0h3m-27 1h1m5 0h1m2 0h1m1 0h1m1 0h1m1 0h1m3 0h2m3 0h1m3 0h1m-29 1h1m1 0h3m1 0h1m2 0h2m1 0h2m1 0h1m3 0h7m1 0h2m-29 1h1m1 0h3m1 0h1m2 0h2m1 0h1m2 0h2m6 0h1m1 0h2m1 0h1m-29 1h1m1 0h3m1 0h1m4 0h2m1 0h3m2 0h1m1 0h7m-28 1h1m5 0h1m2 0h1m1 0h2m1 0h2m2 0h2m1 0h1m1 0h4m1 0h1m-29 1h7m1 0h4m1 0h1m3 0h1m1 0h1m1 0h4m1 0h1"/></svg></div>
+          <div class="vf-t"><b>🎬 Mira el tutorial</b>Escanea el código o entra a <span class="url">essalud.tunky.net/tutorial</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
