@@ -228,6 +228,21 @@
   @keyframes pop{from{opacity:0;transform:translateY(14px) scale(.95)}to{opacity:1;transform:none}}
   @media (prefers-reduced-motion:reduce){.slide.on .anim{animation:none}}
 
+  /* callout destacado arriba-derecha */
+  .callout-tr{position:absolute;top:clamp(22px,6vh,68px);right:clamp(22px,4.5vw,72px);
+    max-width:clamp(250px,32vw,400px);
+    background:linear-gradient(150deg,rgba(240,168,48,.18),rgba(240,168,48,.05));
+    border:1.5px solid var(--amber);border-radius:16px;padding:clamp(15px,1.7vw,22px);
+    box-shadow:0 20px 55px -26px rgba(240,168,48,.55);z-index:6}
+  .callout-tr .tag{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);
+    font-weight:700;margin-bottom:9px}
+  .callout-tr p{margin:0;font-size:clamp(13px,1.35vw,18px);line-height:1.42;color:var(--fg);font-weight:500}
+  .callout-tr b{color:var(--amber);font-weight:800}
+  @media (max-width:980px){
+    .callout-tr{position:static;max-width:none;margin-top:clamp(14px,2vh,20px)}
+  }
+
   @media (max-width:760px){
     .c3,.flow{grid-template-columns:1fr 1fr}
     .pf-grid{grid-template-columns:1fr 1fr}
@@ -313,7 +328,7 @@
     <h2>No teoría. Cosas desplegadas, con usuarios y con factura de costos.</h2>
     <div class="cards c3">
       <div class="card"><div class="knum teal">6</div><div class="klabel">SaaS con IA en producción — chatbots con guardrails, agentes, pagos reales.</div></div>
-      <div class="card"><div class="knum accent">4</div><div class="klabel">Dashboards cívicos de datos abiertos: justicia, finanzas públicas, seguridad, educación.</div></div>
+      <div class="card"><div class="knum accent">+20</div><div class="klabel">Dashboards cívicos de datos abiertos <b>en un mes</b>: justicia, finanzas, seguridad, educación, universidades, ambiente y presupuesto.</div></div>
       <div class="card"><div class="knum">~US$</div><div class="klabel">Costo de IA de esos servicios: <b>centavos al mes</b>, no miles. Ese es el punto de hoy.</div></div>
     </div>
     <p class="lead">Seré honesto: mi producción nace del sector privado y de tableros ciudadanos. Pero las lecciones —costo, guardrails, gobierno del dato— son <b class="accent">directamente transferibles al Estado</b>.</p>
@@ -333,8 +348,12 @@
 
   <!-- RIESGOS · roles -->
   <section class="slide">
+    <div class="callout-tr">
+      <span class="tag">⚡ La respuesta</span>
+      <p><b>No es prohibir la IA ni codear a ciegas.</b> Es disciplina: spec claro, agente adversarial y tests. Eso es exactamente lo que verán hoy.</p>
+    </div>
     <div class="eyebrow">La irrupción · el riesgo que nadie nombra</div>
-    <h2 style="max-width:24ch">Si la IA deja que <span class="coral">cualquiera</span> programe… ¿quién responde por el código?</h2>
+    <h2 style="max-width:22ch">Si la IA deja que <span class="coral">cualquiera</span> programe… ¿quién responde por el código?</h2>
     <p class="lead" style="margin-bottom:.2em">El gerente prototipa. El analista genera módulos. El practicante despliega. La línea entre <b>quién dirige</b> y <b>quién codea</b> se borra — y con ella, la rendición de cuentas.</p>
     <div class="cards c2">
       <div class="card"><h3 class="coral">Responsabilidad difusa</h3><p>Código que funciona pero que nadie entiende del todo. Cuando falla en producción, ¿quién rinde cuentas?</p></div>
@@ -342,7 +361,6 @@
       <div class="card"><h3 class="coral">Fuga de datos</h3><p>Datos sensibles y secretos pegados en prompts. En el Estado, un dato mal expuesto es un problema institucional.</p></div>
       <div class="card"><h3 class="coral">Atrofia del criterio</h3><p>Dependencia del modelo y pérdida de fundamentos. El "vibe coding" sin base no escala ni se audita.</p></div>
     </div>
-    <p class="lead"><b class="accent">La respuesta no es prohibir la IA ni codear a ciegas.</b> Es disciplina: spec claro, agente adversarial y tests. Eso es exactamente lo que verán hoy.</p>
   </section>
 
   <!-- 4 -->
@@ -355,52 +373,6 @@
       <li><b class="accent">En vivo</b> <span>— del spec al tablero desplegado, en ~20 minutos, aquí.</span></li>
       <li><b class="coral">Sin trucos</b> <span>— cero scraping, cero evadir seguridad. Solo lo que el Estado publica abierto.</span></li>
     </ul>
-  </section>
-
-  <!-- 5 -->
-  <section class="slide">
-    <div class="eyebrow">La base de datos · lo que sí está abierto</div>
-    <div class="bigstat">
-      <div class="n">57,738</div>
-      <div class="cap">visitas registradas y anonimizadas — enero 2025 a mayo 2026.</div>
-    </div>
-    <div class="cards c3" style="margin-top:clamp(20px,3.4vh,40px)">
-      <div class="card"><div class="knum accent">2h 26m</div><div class="klabel">duración mediana de una visita a un funcionario público.</div></div>
-      <div class="card"><div class="knum teal">Martes</div><div class="klabel">el día pico; el fin de semana casi nadie (98 visitas en 17 meses).</div></div>
-      <div class="card"><div class="knum">10 a.m.</div><div class="klabel">la hora más concurrida para tocar la puerta del Estado.</div></div>
-    </div>
-  </section>
-
-  <!-- 6 -->
-  <section class="slide thesis">
-    <div class="eyebrow">El hallazgo incómodo</div>
-    <p class="quote">57,738 visitas. <span class="u">Una sola entidad</span> del país las publica como dato abierto.</p>
-    <p class="qattr">Gobierno Regional de Loreto — el único. El resto existe en la plataforma nacional, pero el dato no es descargable ni interoperable.</p>
-  </section>
-
-  <!-- 7 -->
-  <section class="slide">
-    <div class="eyebrow">Los datos hablan · serie mensual</div>
-    <h2 style="max-width:26ch">Las visitas caen a la mitad en 17 meses. ¿Menos gestión, o menos registro?</h2>
-    <div class="chart">
-      <div class="bars" id="mbars"></div>
-      <div class="xlab" id="mx"></div>
-      <div class="yeardiv"><span style="flex:12">2025</span><span style="flex:5">2026</span></div>
-    </div>
-    <p class="src">Registro de Visitas en Línea · GORE Loreto · ene 2025 – may 2026 · n=57,738</p>
-  </section>
-
-  <!-- 8 -->
-  <section class="slide">
-    <div class="eyebrow">Los datos hablan · calidad del dato</div>
-    <h2 style="max-width:24ch">El 76% de las visitas dice solo “Otros Motivos”.</h2>
-    <p class="lead">Un dato abierto sin calidad transparenta poco. Etiquetar bien el motivo es tan importante como publicarlo.</p>
-    <div class="hbars">
-      <div class="hrow"><span class="lab">Otros Motivos</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">76%</span></div>
-      <div class="hrow"><span class="lab">Reunión de trabajo</span><div class="track"><div class="fill t" style="width:30%"></div></div><span class="val">23%</span></div>
-      <div class="hrow"><span class="lab">Provisión de servicios</span><div class="track"><div class="fill t" style="width:2%"></div></div><span class="val">0.4%</span></div>
-      <div class="hrow"><span class="lab">Sin motivo</span><div class="track"><div class="fill t" style="width:1%"></div></div><span class="val">0.2%</span></div>
-    </div>
   </section>
 
   <!-- 9 -->
@@ -459,6 +431,52 @@
         <span class="aarr anim" style="--d:2.4s">→</span>
         <div class="anode anim" style="--d:2.55s"><span class="ic">🤖</span><h4>LLM barato</h4><small>tope + fallback · centavos/mes</small></div>
       </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="slide">
+    <div class="eyebrow">La base de datos · lo que sí está abierto</div>
+    <div class="bigstat">
+      <div class="n">57,738</div>
+      <div class="cap">visitas registradas y anonimizadas — enero 2025 a mayo 2026.</div>
+    </div>
+    <div class="cards c3" style="margin-top:clamp(20px,3.4vh,40px)">
+      <div class="card"><div class="knum accent">2h 26m</div><div class="klabel">duración mediana de una visita a un funcionario público.</div></div>
+      <div class="card"><div class="knum teal">Martes</div><div class="klabel">el día pico; el fin de semana casi nadie (98 visitas en 17 meses).</div></div>
+      <div class="card"><div class="knum">10 a.m.</div><div class="klabel">la hora más concurrida para tocar la puerta del Estado.</div></div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="slide thesis">
+    <div class="eyebrow">El hallazgo incómodo</div>
+    <p class="quote">57,738 visitas. <span class="u">Una sola entidad</span> del país las publica como dato abierto.</p>
+    <p class="qattr">Gobierno Regional de Loreto — el único. El resto existe en la plataforma nacional, pero el dato no es descargable ni interoperable.</p>
+  </section>
+
+  <!-- 7 -->
+  <section class="slide">
+    <div class="eyebrow">Los datos hablan · serie mensual</div>
+    <h2 style="max-width:26ch">Las visitas caen a la mitad en 17 meses. ¿Menos gestión, o menos registro?</h2>
+    <div class="chart">
+      <div class="bars" id="mbars"></div>
+      <div class="xlab" id="mx"></div>
+      <div class="yeardiv"><span style="flex:12">2025</span><span style="flex:5">2026</span></div>
+    </div>
+    <p class="src">Registro de Visitas en Línea · GORE Loreto · ene 2025 – may 2026 · n=57,738</p>
+  </section>
+
+  <!-- 8 -->
+  <section class="slide">
+    <div class="eyebrow">Los datos hablan · calidad del dato</div>
+    <h2 style="max-width:24ch">El 76% de las visitas dice solo “Otros Motivos”.</h2>
+    <p class="lead">Un dato abierto sin calidad transparenta poco. Etiquetar bien el motivo es tan importante como publicarlo.</p>
+    <div class="hbars">
+      <div class="hrow"><span class="lab">Otros Motivos</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">76%</span></div>
+      <div class="hrow"><span class="lab">Reunión de trabajo</span><div class="track"><div class="fill t" style="width:30%"></div></div><span class="val">23%</span></div>
+      <div class="hrow"><span class="lab">Provisión de servicios</span><div class="track"><div class="fill t" style="width:2%"></div></div><span class="val">0.4%</span></div>
+      <div class="hrow"><span class="lab">Sin motivo</span><div class="track"><div class="fill t" style="width:1%"></div></div><span class="val">0.2%</span></div>
     </div>
   </section>
 
