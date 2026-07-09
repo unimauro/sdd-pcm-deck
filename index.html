@@ -171,6 +171,27 @@
   .contact div span{display:block;color:var(--dim);font-size:.7em;letter-spacing:.14em;
     text-transform:uppercase;margin-bottom:4px}
   .contact div b{font-weight:700}
+  /* cierre · showcase rotativo de portadas */
+  .closewrap{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(22px,4vw,56px);
+    align-items:center;margin-top:clamp(6px,1.4vh,18px)}
+  .rotator{position:relative;width:100%;aspect-ratio:16/11;max-width:530px;margin-inline:auto}
+  .rcard{position:absolute;inset:0;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;
+    opacity:0;transform:scale(.97) translateY(10px);transition:opacity .7s ease,transform .7s ease;
+    box-shadow:0 26px 64px -34px rgba(0,0,0,.6);border:1px solid var(--hair)}
+  .rcard.on{opacity:1;transform:none}
+  .rchrome{display:flex;align-items:center;gap:6px;padding:9px 13px;background:rgba(0,0,0,.22)}
+  .rchrome i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);flex:0 0 auto}
+  .rchrome .u{margin-left:6px;font-family:var(--mono);font-size:clamp(11px,1.05vw,13px);
+    color:rgba(255,255,255,.85);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .rbody{flex:1;padding:clamp(18px,2.4vw,30px);display:flex;flex-direction:column;gap:10px;
+    background:linear-gradient(140deg,var(--rs1),var(--rs2))}
+  .rbody .ric{font-size:clamp(26px,3.4vw,44px);line-height:1}
+  .rbody h3{margin:0;color:#fff;font-size:clamp(19px,2.3vw,31px);font-weight:800;letter-spacing:-.01em}
+  .rbody p{margin:0;color:rgba(255,255,255,.86);font-size:clamp(13px,1.4vw,18px);line-height:1.35}
+  .rbars{display:flex;gap:5px;align-items:flex-end;height:clamp(24px,4vh,38px);margin-top:auto;opacity:.7}
+  .rbars i{flex:1;background:rgba(255,255,255,.6);border-radius:3px 3px 0 0}
+  .portqr{display:flex;align-items:center;gap:clamp(12px,1.6vw,18px);margin-top:clamp(16px,2.4vh,26px)}
+  @media (max-width:880px){.closewrap{grid-template-columns:1fr}.rotator{max-width:430px}}
 
   /* chrome */
   .toprail{position:fixed;top:0;left:0;right:0;height:3px;background:var(--hair);z-index:20}
@@ -558,6 +579,37 @@ descargas contra el reCAPTCHA de la plataforma origen.</script>
     </div>
   </section>
 
+  <!-- 11 -->
+  <section class="slide">
+    <div class="eyebrow">Sin quebrar el presupuesto</div>
+    <h2>La barrera no es el dinero. Es el diseño.</h2>
+    <div class="cards c3">
+      <div class="card"><div class="knum teal">Gratis</div><div class="klabel">Hosting estático (GitHub Pages / Cloudflare). Cero servidor que mantener.</div></div>
+      <div class="card"><div class="knum accent">Centavos</div><div class="klabel">IA solo en el build y en consultas acotadas, con topes de uso por IP.</div></div>
+      <div class="card"><div class="knum">Candados</div><div class="klabel">Rate-limit, tope diario, modelo barato con fallback. El costo nunca se dispara.</div></div>
+    </div>
+    <p class="lead">Un tablero como este cuesta <b class="accent">menos que un almuerzo al mes</b>. Replicable por cualquier entidad, sin depender de un proveedor.</p>
+  </section>
+
+  <!-- 12 -->
+  <section class="slide thesis">
+    <div class="eyebrow">La tesis</div>
+    <p class="quote">Legalmente abierto <span class="coral">no es</span> técnicamente accesible.</p>
+    <p class="qattr">La Ley 27806 ya lo manda. La IA lo construye en 20 minutos. El cuello de botella no es tecnológico — es de gobierno de datos. Y eso sí se decide desde esta sala.</p>
+  </section>
+
+  <!-- 13 -->
+  <section class="slide">
+    <div class="eyebrow">El llamado a la acción · ENGD 2026-2030</div>
+    <h2 style="max-width:24ch">Lo que hoy hice con una entidad, hágamoslo con 2,000.</h2>
+    <ul class="clean">
+      <li><b>Interoperable por defecto</b> <span>— registro de visitas descargable en formato reutilizable, no bajo pedido.</span></li>
+      <li><b>Calidad del dato</b> <span>— motivos y campos estandarizados, no “Otros Motivos” en 3 de cada 4 registros.</span></li>
+      <li><b>Con IA responsable</b> <span>— spec claro, agente adversarial y anonimización desde el diseño.</span></li>
+    </ul>
+    <p class="src">La ENIA y la ENGD 2026-2030 son exactamente la ventana para cerrar esta brecha.</p>
+  </section>
+
   <!-- 5 -->
   <section class="slide">
     <div class="eyebrow">La base de datos · lo que sí está abierto</div>
@@ -604,45 +656,30 @@ descargas contra el reCAPTCHA de la plataforma origen.</script>
     </div>
   </section>
 
-  <!-- 11 -->
-  <section class="slide">
-    <div class="eyebrow">Sin quebrar el presupuesto</div>
-    <h2>La barrera no es el dinero. Es el diseño.</h2>
-    <div class="cards c3">
-      <div class="card"><div class="knum teal">Gratis</div><div class="klabel">Hosting estático (GitHub Pages / Cloudflare). Cero servidor que mantener.</div></div>
-      <div class="card"><div class="knum accent">Centavos</div><div class="klabel">IA solo en el build y en consultas acotadas, con topes de uso por IP.</div></div>
-      <div class="card"><div class="knum">Candados</div><div class="klabel">Rate-limit, tope diario, modelo barato con fallback. El costo nunca se dispara.</div></div>
-    </div>
-    <p class="lead">Un tablero como este cuesta <b class="accent">menos que un almuerzo al mes</b>. Replicable por cualquier entidad, sin depender de un proveedor.</p>
-  </section>
-
-  <!-- 12 -->
-  <section class="slide thesis">
-    <div class="eyebrow">La tesis</div>
-    <p class="quote">Legalmente abierto <span class="coral">no es</span> técnicamente accesible.</p>
-    <p class="qattr">La Ley 27806 ya lo manda. La IA lo construye en 20 minutos. El cuello de botella no es tecnológico — es de gobierno de datos. Y eso sí se decide desde esta sala.</p>
-  </section>
-
-  <!-- 13 -->
-  <section class="slide">
-    <div class="eyebrow">El llamado a la acción · ENGD 2026-2030</div>
-    <h2 style="max-width:24ch">Lo que hoy hice con una entidad, hágamoslo con 2,000.</h2>
-    <ul class="clean">
-      <li><b>Interoperable por defecto</b> <span>— registro de visitas descargable en formato reutilizable, no bajo pedido.</span></li>
-      <li><b>Calidad del dato</b> <span>— motivos y campos estandarizados, no “Otros Motivos” en 3 de cada 4 registros.</span></li>
-      <li><b>Con IA responsable</b> <span>— spec claro, agente adversarial y anonimización desde el diseño.</span></li>
-    </ul>
-    <p class="src">La ENIA y la ENGD 2026-2030 son exactamente la ventana para cerrar esta brecha.</p>
-  </section>
-
   <!-- 14 -->
   <section class="slide close">
     <div class="eyebrow">Gracias</div>
-    <h1 style="font-size:clamp(28px,4.8vw,60px)">El código y el spec quedan abiertos. Replíquenlo en su entidad.</h1>
-    <div class="contact">
-      <div><span>Expositor</span><b>Carlos Mauro Cárdenas F.</b></div>
-      <div><span>Correo</span><b>carlos@cardenas.pe</b></div>
-      <div><span>GitHub</span><b>github.com/unimauro</b></div>
+    <div class="closewrap">
+      <div>
+        <h1 style="font-size:clamp(25px,3.9vw,50px)">El código y el spec quedan abiertos. Replíquenlo en su entidad.</h1>
+        <div class="contact">
+          <div><span>Expositor</span><b>Carlos Mauro Cárdenas F.</b></div>
+          <div><span>Correo</span><b>carlos@cardenas.pe</b></div>
+          <div><span>GitHub</span><b>github.com/unimauro</b></div>
+        </div>
+        <div class="portqr">
+          <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" width="100%" height="100%" class="segno"><path fill="#fff" d="M0 0h33v33h-33z"/><path class="qrline" stroke="#0d1a2b" d="M2 2.5h7m5 0h1m2 0h6m1 0h7m-29 1h1m5 0h1m2 0h4m1 0h2m2 0h2m2 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m3 0h1m2 0h4m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h2m2 0h4m1 0h2m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m4 0h1m3 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m1 0h1m1 0h1m5 0h1m1 0h3m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-20 1h1m2 0h1m1 0h2m1 0h1m1 0h2m-20 1h1m2 0h1m1 0h1m1 0h3m1 0h2m1 0h1m2 0h1m1 0h2m1 0h2m1 0h1m-26 1h1m3 0h1m3 0h1m1 0h2m2 0h4m1 0h1m1 0h3m1 0h3m-28 1h2m3 0h4m1 0h1m4 0h3m1 0h2m3 0h2m1 0h1m-24 1h1m3 0h1m1 0h1m2 0h1m2 0h5m3 0h1m1 0h2m-28 1h3m1 0h4m1 0h3m3 0h2m2 0h1m2 0h1m1 0h1m2 0h1m-26 1h3m1 0h1m1 0h1m2 0h1m1 0h5m3 0h1m1 0h1m1 0h1m1 0h1m-28 1h1m4 0h1m2 0h1m1 0h1m1 0h1m2 0h1m1 0h1m1 0h3m1 0h1m3 0h1m-29 1h2m1 0h1m6 0h3m1 0h1m5 0h2m1 0h1m1 0h1m1 0h1m-27 1h2m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m2 0h2m2 0h1m3 0h2m-29 1h1m2 0h2m4 0h1m2 0h1m5 0h1m3 0h4m2 0h1m-26 1h1m1 0h2m3 0h1m2 0h3m1 0h1m2 0h1m2 0h1m1 0h1m2 0h1m-27 1h2m5 0h1m1 0h1m1 0h1m1 0h4m4 0h3m-26 1h2m4 0h1m1 0h1m2 0h4m2 0h1m2 0h5m3 0h1m-21 1h1m1 0h1m3 0h3m3 0h1m3 0h1m1 0h1m1 0h1m-29 1h7m2 0h9m1 0h2m1 0h1m1 0h1m2 0h2m-29 1h1m5 0h1m2 0h4m1 0h1m1 0h5m3 0h2m-26 1h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h2m3 0h7m2 0h2m-29 1h1m1 0h3m1 0h1m2 0h2m5 0h1m6 0h1m2 0h2m-28 1h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h6m5 0h2m-29 1h1m5 0h1m1 0h1m3 0h1m1 0h1m2 0h2m1 0h1m2 0h1m1 0h1m1 0h2m-29 1h7m2 0h3m3 0h3m2 0h1m1 0h1m1 0h2m1 0h1"/></svg></div>
+          <div class="vf-t"><b>+20 dashboards cívicos abiertos</b>Explóralos en <span class="url">unimauro.github.io</span></div>
+        </div>
+      </div>
+      <div class="rotator" id="rotator">
+        <div class="rcard on" style="--rs1:#0f766e;--rs2:#134e4a"><div class="rchrome"><i></i><i></i><i></i><span class="u">observatorio-justicia-peru</span></div><div class="rbody"><span class="ric">⚖️</span><h3>Observatorio de Justicia</h3><p>El sistema judicial del Perú en datos abiertos.</p><div class="rbars"><i style="height:50%"></i><i style="height:75%"></i><i style="height:60%"></i><i style="height:90%"></i><i style="height:70%"></i><i style="height:85%"></i></div></div></div>
+        <div class="rcard" style="--rs1:#b45309;--rs2:#78350f"><div class="rchrome"><i></i><i></i><i></i><span class="u">peru-finanzas-publicas</span></div><div class="rbody"><span class="ric">💰</span><h3>Finanzas Públicas</h3><p>PBI, deuda y presupuesto del Perú, 1990–2026.</p><div class="rbars"><i style="height:40%"></i><i style="height:55%"></i><i style="height:70%"></i><i style="height:85%"></i><i style="height:95%"></i><i style="height:100%"></i></div></div></div>
+        <div class="rcard" style="--rs1:#0e7490;--rs2:#164e63"><div class="rchrome"><i></i><i></i><i></i><span class="u">qhaway-dashboard</span></div><div class="rbody"><span class="ric">🗺️</span><h3>Qhaway · Presupuesto</h3><p>Presupuesto público distrital (SIAF-MEF).</p><div class="rbars"><i style="height:65%"></i><i style="height:45%"></i><i style="height:80%"></i><i style="height:55%"></i><i style="height:75%"></i><i style="height:60%"></i></div></div></div>
+        <div class="rcard" style="--rs1:#15803d;--rs2:#14532d"><div class="rchrome"><i></i><i></i><i></i><span class="u">educacion-peru</span></div><div class="rbody"><span class="ric">📚</span><h3>Educación del Perú</h3><p>Aprendizajes ENLA 2024 y brechas educativas.</p><div class="rbars"><i style="height:55%"></i><i style="height:70%"></i><i style="height:50%"></i><i style="height:80%"></i><i style="height:65%"></i><i style="height:90%"></i></div></div></div>
+        <div class="rcard" style="--rs1:#a16207;--rs2:#713f12"><div class="rchrome"><i></i><i></i><i></i><span class="u">universidades-peru</span></div><div class="rbody"><span class="ric">🎓</span><h3>Universidades del Perú</h3><p>Ranking de investigación de 91 universidades.</p><div class="rbars"><i style="height:100%"></i><i style="height:80%"></i><i style="height:65%"></i><i style="height:55%"></i><i style="height:45%"></i><i style="height:40%"></i></div></div></div>
+        <div class="rcard" style="--rs1:#6d28d9;--rs2:#4c1d95"><div class="rchrome"><i></i><i></i><i></i><span class="u">congreso-abierto-peru</span></div><div class="rbody"><span class="ric">🏛️</span><h3>Congreso Abierto</h3><p>Transparencia y análisis del Congreso del Perú.</p><div class="rbars"><i style="height:60%"></i><i style="height:50%"></i><i style="height:75%"></i><i style="height:65%"></i><i style="height:85%"></i><i style="height:55%"></i></div></div></div>
+      </div>
     </div>
     <p class="src">Datos: Registro de Visitas en Línea, datosabiertos.gob.pe (SGTD-PCM) · anonimizado · n=57,738</p>
   </section>
@@ -700,6 +737,11 @@ descargas contra el reCAPTCHA de la plataforma origen.</script>
     else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
       try{document.execCommand('copy');done();}catch(e){}document.body.removeChild(ta);}
   });}
+  // showcase rotativo de portadas (cierre)
+  var rcards=[].slice.call(document.querySelectorAll('#rotator .rcard'));
+  if(rcards.length>1){var ri=0;setInterval(function(){
+    rcards[ri].classList.remove('on');ri=(ri+1)%rcards.length;rcards[ri].classList.add('on');
+  },2800);}
   go(0);
 </script>
 </body>
