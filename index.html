@@ -440,20 +440,24 @@
 
   <!-- 9 -->
   <section class="slide">
-    <div class="eyebrow">El spec que escribiré en vivo</div>
-    <div class="code"><span class="c"># dashboard-visitas.spec</span>
-<span class="k">objetivo:</span>  Tablero público de visitas a funcionarios del Estado
-<span class="k">fuente:</span>   data/visitas_2025-2026.json  <span class="c">(ETL ya corrido)</span>
-<span class="k">privacidad:</span>
-  - <span class="s">NUNCA</span> mostrar DNI ni nombre de visitante
-  - funcionario visitado = información pública → sí
-<span class="k">vistas:</span>
-  - KPIs: total, duración mediana, día y hora pico
-  - serie mensual  ·  motivos  ·  top funcionarios
-<span class="k">stack:</span>    HTML + ECharts, estático, deploy a GitHub Pages
-<span class="k">costo:</span>    US$ 0 de hosting  ·  IA solo en build
-<span class="k">reglas:</span>   etiquetar dato real vs. estimado  ·  citar fuente y fecha</div>
-    <p class="src">De este archivo sale el tablero completo. Lo verán generarse y desplegarse.</p>
+    <div class="eyebrow">El prompt que escribiré en vivo</div>
+    <div class="code"><span class="c">&gt; claude-code — fuente de la verdad: SPEC-visitas.md</span>
+
+<span class="k">1) CONSTRUYE</span> el dashboard (ETL → JSON agregado → ECharts)
+   <span class="s">NUNCA</span> DNI ni nombre de visitante · solo agregados al navegador
+
+<span class="k">2) CREA AGENTES ADVERSARIALES</span> <span class="c">(fallan el build si algo falla)</span>
+   • seguridad: bloquea si hay <span class="s">PII</span>, secretos o IP expuesta
+   • cazador de errores + <span class="s">unit tests</span> (pytest)
+   • revisor: inyecta un DNI de prueba → debe anonimizarlo
+
+<span class="k">3) INTEGRA EL CHATBOT</span> por voz
+   • llama al gateway <span class="s">ai.tunky.net</span> · keys server-side, no en el front
+   • guardrails: solo el tema, rate-limit x IP, contexto = solo cifras
+   • Web Speech API (voz) · costo ~centavos/mes
+
+<span class="k">4) DEPLOY</span> → GitHub Pages · cita fuente y fecha en cada gráfico</div>
+    <p class="src">Un prompt → tablero + agentes de seguridad + bot. Lo verán generarse en vivo.</p>
   </section>
 
   <!-- 10 -->
